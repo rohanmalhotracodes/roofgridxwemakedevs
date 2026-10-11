@@ -59,7 +59,7 @@ RoofGrid's application layer is built around AWS. Hosting, APIs, compute, orches
 
 ## AWS architecture
 
-![RoofGrid AWS solar planning architecture](assets/architecture/roofgrid-aws-architecture.png)
+![RoofGrid AWS solar planning architecture](assets/architecture/roofgrid-aws-architecture-v2.png)
 
 A request begins in the web application hosted by **AWS Amplify Hosting**. Amplify sends the browser's `/api/*` calls to **Amazon API Gateway**, which invokes **AWS Lambda** for backend processing.
 
