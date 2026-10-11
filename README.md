@@ -42,7 +42,7 @@ RoofGrid's application layer is built around AWS. Hosting, APIs, compute, orches
 
 ### Ask questions about the plan
 
-![RoofGrid AI assistant explaining the financial results for a rooftop plan](assets/screenshots/ai-assistant.png)
+![RoofGrid AI assistant explaining the financial results for a rooftop plan](assets/screenshots/ai-assistant.jpg)
 
 ## Core capabilities
 
