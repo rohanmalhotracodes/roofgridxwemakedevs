@@ -19,7 +19,7 @@
 RoofGrid turns a location and rooftop into an early-stage solar plan:
 
 1. Search for a property or navigate to it on the map.
-2. detect the building footprint from satellite and map data;
+2. Detect the building footprint from satellite and map data;
 3. draw or refine the usable roof boundary;
 4. reserve access paths and exclude rooftop obstacles;
 5. place panels using configurable dimensions, spacing, and orientation;
@@ -32,7 +32,7 @@ RoofGrid turns a location and rooftop into an early-stage solar plan:
 
 A browser request enters through **AWS Amplify Hosting** and is routed over HTTPS to **Amazon API Gateway**. **AWS Lambda** performs the backend work and coordinates longer-running analysis through **AWS Step Functions**. Rooftop detection uses **Amazon SageMaker AI**, while the conversational planning assistant runs on **Amazon Bedrock**.
 
-Project records and usage counters are stored in **Amazon DynamoDB**. Satellite inputs, generated reports, and analysis artifacts are stored in **Amazon S3**. **AWS Secrets Manager** protects private configuration, and **AWS Identity and Access Management (IAM)** enforces least-privilege access between every service. **Amazon CloudWatch** centralizes logs, metrics, and diagnostics, while **Amazon EventBridge** carries asynchronous events between workflow components.
+Project records and usage counters are stored in **Amazon DynamoDB**. Satellite inputs, generated reports, and analysis artifacts are stored in **Amazon S3**. **AWS Secrets Manager** protects private configuration, **Amazon Simple Email Service (Amazon SES)** handles contact-form delivery, and **AWS Identity and Access Management (IAM)** enforces least-privilege access between every service. **Amazon CloudWatch** centralizes logs, metrics, and diagnostics, while **Amazon EventBridge** carries asynchronous events between workflow components.
 
 ### AWS services used
 
@@ -47,6 +47,7 @@ Project records and usage counters are stored in **Amazon DynamoDB**. Satellite 
 | **Amazon DynamoDB** | Stores project metadata, application state, and daily AI-usage counters. |
 | **Amazon S3** | Stores satellite imagery, generated reports, and rooftop-analysis results. |
 | **AWS Secrets Manager** | Keeps private backend configuration out of source code and frontend bundles. |
+| **Amazon Simple Email Service (Amazon SES)** | Delivers contact-form messages without relying on a non-AWS mail provider. |
 | **AWS IAM** | Applies least-privilege permissions to Lambda, Bedrock, SageMaker AI, DynamoDB, S3, and workflow resources. |
 | **Amazon CloudWatch** | Collects logs, metrics, alarms, and runtime diagnostics across the platform. |
 | **Amazon EventBridge** | Delivers asynchronous application and workflow events. |
@@ -72,6 +73,7 @@ AWS Lambda
   |----> Amazon DynamoDB
   |----> Amazon S3
   |----> AWS Secrets Manager
+  |----> Amazon SES
   |----> NASA POWER API
   `----> OpenStreetMap / Overpass
 
@@ -89,7 +91,7 @@ RoofGrid keeps external dependencies deliberately narrow:
 | **NASA POWER** | Solar-radiation and temperature data used in production estimates. |
 | **OpenStreetMap / Overpass and map imagery** | Location search, basemap context, and building-footprint information. |
 
-All application hosting, APIs, compute, AI/ML inference, workflow orchestration, persistence, object storage, secrets, permissions, events, and monitoring are handled by AWS.
+All application hosting, APIs, compute, AI/ML inference, workflow orchestration, persistence, object storage, email delivery, secrets, permissions, events, and monitoring are handled by AWS.
 
 ## Core capabilities
 
@@ -132,6 +134,7 @@ All application hosting, APIs, compute, AI/ML inference, workflow orchestration,
 - AWS SAM CLI
 - GitHub access for AWS Amplify Hosting
 - Access to the required Amazon Bedrock and Amazon SageMaker AI models/endpoints
+- A verified Amazon SES identity for contact-form delivery
 
 ### Deploy the backend
 
