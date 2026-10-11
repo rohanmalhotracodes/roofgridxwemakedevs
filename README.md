@@ -10,7 +10,7 @@
   Locate a roof, map usable space, place panels, and explore energy, financial, environmental, and AI-assisted insights in one workflow.
 </p>
 
-![RoofGrid landing page showing an access-aware rooftop solar layout](assets/screenshots/landing-page.png)
+![RoofGrid landing page showing an access-aware rooftop solar layout](assets/screenshots/demo-landing-v2.png)
 
 ## Why RoofGrid
 
@@ -30,19 +30,19 @@ RoofGrid's application layer is built around AWS. Hosting, APIs, compute, orches
 
 ### Find and define a rooftop
 
-![RoofGrid planner showing global satellite search and roof setup controls](assets/screenshots/planner-setup.png)
+![RoofGrid planner showing global satellite search and roof setup controls](assets/screenshots/demo-planner-v2.png)
 
 ### Review energy potential
 
-![RoofGrid energy analysis showing production and solar resource estimates](assets/screenshots/energy-analysis.png)
+![RoofGrid energy analysis showing production and solar resource estimates](assets/screenshots/demo-energy-v2.png)
 
 ### Explore financial outcomes
 
-![RoofGrid financial analysis showing cost, savings, return, and payback estimates](assets/screenshots/financial-analysis.png)
+![RoofGrid financial analysis showing cost, savings, return, and payback estimates](assets/screenshots/demo-finance-v2.png)
 
 ### Ask questions about the plan
 
-![RoofGrid AI assistant explaining the financial results for a rooftop plan](assets/screenshots/ai-assistant.jpg)
+![RoofGrid AI assistant explaining the financial results for a rooftop plan](assets/screenshots/demo-ai-assistant-v2.jpg)
 
 ## Core capabilities
 
